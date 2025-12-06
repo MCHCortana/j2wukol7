@@ -47,6 +47,7 @@ public class PostController {
     @GetMapping("/addPost")
     public ModelAndView getAddNewPost() {
         ModelAndView modelAndView = new ModelAndView("addPost");
+        modelAndView.addObject(new Post());
         return modelAndView;
     }
 
@@ -54,10 +55,10 @@ public class PostController {
     public Object addNewPost(@Valid @ModelAttribute("addPost") Post post, BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView("addPost");
         if (bindingResult.hasErrors()) {
-            return "/addPost";
+            return "addPost";
         }
         postService
                 .saveNewPost(post);
-        return "/";
+        return "redirect:/";
     }
 }

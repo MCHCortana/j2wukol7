@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -14,10 +16,22 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger id;
     private String slug;
+    @NotBlank
+    @NotNull(message = "Zadej jmeno autora")
     private String author;
+
+    @NotBlank
+    @NotNull(message = "Zadej jmeno název")
     private String title;
+
+    @NotBlank
+    @NotNull(message = "Zadej krátky text o članku")
     private String perex;
+
+    @NotBlank
+    @NotNull(message = "Mužeš psát článek")
     private String body;
+    @NotNull(message = "Zadej datum vydání článku")
     private LocalDate published;
 
     public Post() {
