@@ -15,6 +15,7 @@
             </article>
             </a>
         [/#list]
+        <a href="/addPost" class="back-link">⌨ nový článek</a>
     </section>
 
     <nav class="pagination">

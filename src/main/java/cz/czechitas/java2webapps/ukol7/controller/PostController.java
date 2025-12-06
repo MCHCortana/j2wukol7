@@ -47,7 +47,7 @@ public class PostController {
     @GetMapping("/addPost")
     public ModelAndView getAddNewPost() {
         ModelAndView modelAndView = new ModelAndView("addPost");
-        modelAndView.addObject(new Post());
+        modelAndView.addObject("addPost", new Post());
         return modelAndView;
     }
 
