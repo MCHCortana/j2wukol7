@@ -1,7 +1,7 @@
 CREATE TABLE post
 (
     id IDENTITY,
-    slug      VARCHAR(100) NOT NULL UNIQUE,
+    slug      VARCHAR(100) NOT NULL,
     author    VARCHAR(100) NOT NULL,
     title     VARCHAR(255) NOT NULL,
     perex     TEXT         NOT NULL,
